@@ -1,21 +1,17 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 import pages.PracticePage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTest extends TestBase {
   PracticePage practicePage = new PracticePage();
 
   @Test
   void fillFormTest() {
-    practicePage.openTestPage("https://demoqa.com/automation-practice-form")
-      .removeBanner()
-      .setFirstName("Alice")
+    practicePage.openTestPage("/automation-practice-form");
+      removeBanner();
+      practicePage.setFirstName("Alice")
       .setLastName("Ivanova")
       .setUserEmailInput("alice-lilo@mail.ru")
       .setGender("Female")
@@ -25,9 +21,9 @@ public class PracticeFormTest extends TestBase {
       .setCity("Delhi")
       .setUploadPicture("photo_2024-11-07_16-38-58.jpg")
       .setSport("Sports")
+
       .submitButton();
 
-      //practicePage.checkFormAppears();
       practicePage.checkResult("Student Name","Alice Ivanova")
       .checkResult("Student Email","alice-lilo@mail.ru")
       .checkResult("Gender","Female")

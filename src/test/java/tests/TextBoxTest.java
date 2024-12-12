@@ -9,12 +9,13 @@ public class TextBoxTest extends TestBase {
   @Test
   void fillTextBoxTest() {
 
-    textBoxPage.openTextBox("https://demoqa.com/text-box")
-      .setFullName("Alice")
+    textBoxPage.openTextBox("/text-box");
+     removeBanner();
+      textBoxPage.setFullName("Alice")
       .setEmail("A1@mail.ru")
       .setCurrentAddress("address")
-      .setPermanentAddress("address2")
-      .submitButton();
+      .setPermanentAddress("address2");
+    textBoxPage.submitButton2();
 
     textBoxPage.checkInput("Name:","Alice")
       .checkInput("Email:","A1@mail.ru")

@@ -13,15 +13,16 @@ public class TestBase {
   static void beforeAll() {
     Configuration.browserSize = "1920x1080";
     Configuration.pageLoadStrategy = "eager";
-    //open();
+    Configuration.baseUrl = "https://demoqa.com";
+  }
+
+  public static void removeBanner() {
+    executeJavaScript("$('#fixedban').remove()");
+    executeJavaScript("$('footer').remove()");
   }
   @AfterEach
   public void tearDown() {
     closeWebDriver();
   }
-  public TestBase removeBanner() {
-    executeJavaScript("$('#fixedban').remove()");
-    executeJavaScript("$('footer').remove()");
-    return this;
-  }
+
 }

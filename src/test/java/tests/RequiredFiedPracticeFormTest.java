@@ -14,7 +14,7 @@ public class RequiredFiedPracticeFormTest {
   static void beforeAll() {
     Configuration.browserSize = "1920x1080";
     Configuration.pageLoadStrategy = "eager";
-    //open();
+
   }
   @Test
   void requiredFieldTest() {

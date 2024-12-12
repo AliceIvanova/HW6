@@ -4,7 +4,6 @@ import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 import pages.components.TableResultComponent;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -32,11 +31,6 @@ public class PracticePage {
   CalendarComponent calendarComponent = new CalendarComponent();
   TableResultComponent tableResultComponent=new TableResultComponent();
 
-  public PracticePage removeBanner() {
-    executeJavaScript("$('#fixedban').remove()");
-    executeJavaScript("$('footer').remove()");
-    return this;
-  }
   public PracticePage setFirstName(String value) {
     firstNameInput.setValue(value);
     return this;
@@ -75,8 +69,6 @@ public class PracticePage {
 
   public PracticePage openTestPage (String value) {
     open(value);
-//    executeJavaScript("$('#fixedban').remove()");
-//    executeJavaScript("$('footer').remove()");
     return this;
   }
 
@@ -86,7 +78,6 @@ public class PracticePage {
   }
 
   public PracticePage setSubjects(String value){
-//        subjectsInput.click();
         subjectsInput.setValue(value).pressEnter();
         return this;
   }
@@ -108,17 +99,12 @@ public class PracticePage {
 
   public PracticePage  submitButton() {
     submitButtonInPracticeForm.scrollIntoView(true).click();
-    //scrollIntoView(true).
     return this;
   }
 
   public PracticePage checkResult(String key, String value) {
     tableResultComponent.tableResult(key, value);
     return this;
-  }
-
-  public void checkFormAppears() {
-    modalWindow.shouldBe(visible);
   }
 
   public void  checkFormNotAppears() {

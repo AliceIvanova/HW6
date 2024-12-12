@@ -8,8 +8,9 @@ public class PracticeFormMinTests extends TestBase{
   PracticePage practicePage = new PracticePage();
   @Test
   void fillFormTestMin() {
-    practicePage.openTestPage("https://demoqa.com/automation-practice-form")
-      .setFirstName("Alice")
+    practicePage.openTestPage("/automation-practice-form");
+      removeBanner();
+      practicePage.setFirstName("Alice")
       .setLastName("Ivanova")
       .setGender("Female")
       .setUserNumber("1234567891")

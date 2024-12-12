@@ -2,7 +2,6 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.OutputResult;
-import tests.TestBase;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -13,8 +12,7 @@ public class TextBoxPage {
     userEmailInput = $("#userEmail"),
     currentAddressInput = $("#currentAddress"),
     permanentAddressInput = $("#permanentAddress"),
-    submitButton = $("#submit"),
-    checkOutput=$("#output");
+    submitButton = $("#submit");
   OutputResult outputResult=new OutputResult();
 
   public TextBoxPage openTextBox(String value) {
@@ -39,9 +37,9 @@ public class TextBoxPage {
     permanentAddressInput.setValue(value);
     return this;
   }
-  public TextBoxPage submitButton() {
+  public void submitButton2() {
     submitButton.click();
-    return this;
+
   }
   public TextBoxPage checkInput(String key, String value) {
    outputResult.outputResult(key, value);
