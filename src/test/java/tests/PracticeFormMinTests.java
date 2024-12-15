@@ -3,13 +3,14 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.PracticePage;
+import pages.components.Utils;
 
 public class PracticeFormMinTests extends TestBase{
   PracticePage practicePage = new PracticePage();
   @Test
   void fillFormTestMin() {
     practicePage.openTestPage("/automation-practice-form");
-      removeBanner();
+    Utils.removeBanner();
       practicePage.setFirstName("Alice")
       .setLastName("Ivanova")
       .setGender("Female")

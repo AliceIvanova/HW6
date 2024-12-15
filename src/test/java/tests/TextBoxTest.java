@@ -2,6 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.TextBoxPage;
+import pages.components.Utils;
 
 public class TextBoxTest extends TestBase {
   TextBoxPage textBoxPage=new TextBoxPage();
@@ -10,7 +11,7 @@ public class TextBoxTest extends TestBase {
   void fillTextBoxTest() {
 
     textBoxPage.openTextBox("/text-box");
-     removeBanner();
+    Utils.removeBanner();
       textBoxPage.setFullName("Alice")
       .setEmail("A1@mail.ru")
       .setCurrentAddress("address")

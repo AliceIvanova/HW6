@@ -2,6 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.*;
 import pages.PracticePage;
+import pages.components.Utils;
 
 
 public class PracticeFormTest extends TestBase {
@@ -10,7 +11,7 @@ public class PracticeFormTest extends TestBase {
   @Test
   void fillFormTest() {
     practicePage.openTestPage("/automation-practice-form");
-      removeBanner();
+    Utils.removeBanner();
       practicePage.setFirstName("Alice")
       .setLastName("Ivanova")
       .setUserEmailInput("alice-lilo@mail.ru")

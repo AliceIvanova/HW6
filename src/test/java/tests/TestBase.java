@@ -16,10 +16,6 @@ public class TestBase {
     Configuration.baseUrl = "https://demoqa.com";
   }
 
-  public static void removeBanner() {
-    executeJavaScript("$('#fixedban').remove()");
-    executeJavaScript("$('footer').remove()");
-  }
   @AfterEach
   public void tearDown() {
     closeWebDriver();
